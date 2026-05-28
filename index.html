@@ -3,354 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnimePulse</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>AnimePulse Ultimate</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
-background:#0b0b0f;
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
 color:white;
-overflow-x:hidden;
 }
-
-/* HEADER */
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid rgba(255,0,0,0.2);
-}
-
-.logo{
-font-size:34px;
-font-weight:700;
-color:#ff2c2c;
-letter-spacing:1px;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-margin-left:25px;
-font-size:16px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#ff2c2c;
-}
-
-/* HERO */
-
-.hero{
-height:90vh;
-background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1541560052-5e137f229371?q=80&w=1400&auto=format&fit=crop')
-center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
 text-align:center;
-padding:20px;
+padding:15px;
+background:#111;
 }
 
-.hero-content h1{
-font-size:65px;
-margin-bottom:20px;
-line-height:1.1;
+.search{
+text-align:center;
+margin:15px;
 }
 
-.hero-content span{
-color:#ff2c2c;
+.search input{
+width:85%;
+padding:10px;
+border-radius:10px;
+border:none;
 }
 
-.hero-content p{
-font-size:18px;
-color:#ccc;
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
-}
-
-.hero-btn{
-display:inline-block;
-padding:14px 35px;
-background:#ff2c2c;
-color:white;
-text-decoration:none;
-border-radius:40px;
-font-weight:600;
-transition:0.3s;
-}
-
-.hero-btn:hover{
-background:white;
-color:black;
-transform:scale(1.05);
-}
-
-/* SECTION */
-
-.section-title{
-font-size:34px;
-margin:60px 8% 30px;
-font-weight:700;
-}
-
-.section-title span{
-color:#ff2c2c;
-}
-
-/* CARDS */
-
-.anime-grid{
+/* GRID */
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
-padding:0 8%;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+padding:15px;
 }
 
 .card{
-background:#15151d;
-border-radius:20px;
+background:#1c1c1c;
+border-radius:12px;
 overflow:hidden;
-transition:0.4s;
-position:relative;
+cursor:pointer;
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(255,44,44,0.3);
+transform:scale(1.05);
 }
 
 .card img{
 width:100%;
-height:320px;
+height:260px;
 object-fit:cover;
 }
 
 .card-content{
-padding:18px;
+padding:10px;
 }
 
-.card-content h3{
-font-size:22px;
-margin-bottom:10px;
-}
-
-.card-content p{
-color:#bdbdbd;
-font-size:14px;
-line-height:1.5;
-}
-
-/* TRENDING TAG */
-
-.tag{
-position:absolute;
-top:15px;
-left:15px;
-background:#ff2c2c;
-padding:6px 14px;
-border-radius:20px;
+.release{
 font-size:12px;
-font-weight:600;
+color:#aaa;
 }
 
-/* FOOTER */
-
-footer{
-margin-top:80px;
-padding:35px;
-text-align:center;
-background:#111;
-color:#999;
-border-top:1px solid rgba(255,255,255,0.1);
+.rating{
+color:gold;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero-content h1{
-font-size:42px;
+/* TRENDING */
+.trending{
+display:flex;
+overflow-x:auto;
+gap:10px;
+padding:10px;
 }
 
-nav{
+.trending img{
+height:130px;
+border-radius:10px;
+}
+
+/* MODAL */
+.modal{
 display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
 }
 
-.hero{
-height:80vh;
+.modal-content{
+background:#1c1c1c;
+width:85%;
+margin:50px auto;
+padding:15px;
+border-radius:10px;
 }
 
+.close{
+float:right;
+cursor:pointer;
+color:red;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">AnimePulse</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">News</a>
-<a href="#">Trending</a>
-<a href="#">Reviews</a>
-<a href="#">Contact</a>
-</nav>
-
+<h2>AnimePulse 🔥 Ultimate</h2>
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Welcome To <span>AnimePulse</span></h1>
-
-<p>
-Get the latest anime news, release dates, trending shows,
-and Hindi anime updates all in one place.
-</p>
-
-<a href="#" class="hero-btn">Explore Now</a>
-
+<div class="search">
+<input type="text" id="search" onkeyup="searchAnime()" placeholder="Search anime...">
 </div>
 
-</section>
+<h3 style="text-align:center;">🔥 Trending</h3>
+<div class="trending">
+<img src="https://cdn.myanimelist.net/images/anime/1171/109222.jpg">
+<img src="https://cdn.myanimelist.net/images/anime/1441/122795.jpg">
+<img src="https://cdn.myanimelist.net/images/anime/1259/133638.jpg">
+<img src="https://cdn.myanimelist.net/images/anime/1806/126216.jpg">
+<img src="https://cdn.myanimelist.net/images/anime/9/9453.jpg">
+</div>
 
-<!-- TRENDING -->
+<h3 style="text-align:center;">All Anime (50)</h3>
 
-<h2 class="section-title">Trending <span>Anime</span></h2>
+<div class="grid" id="grid"></div>
 
-<div class="anime-grid">
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">❌</span>
+<h2 id="title"></h2>
+<img id="img" style="width:100%;border-radius:10px;">
+<p id="desc"></p>
+</div>
+</div>
 
-<div class="card">
+<script>
 
-<div class="tag">HOT</div>
+const anime = [
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Solo_Leveling_Webtoon.png/250px-Solo_Leveling_Webtoon.png">
+{t:"Solo Leveling",i:"https://cdn.myanimelist.net/images/anime/1938/138009.jpg",r:"Early 2026",d:"Weak hunter becomes strongest."},
+{t:"Blue Lock",i:"https://cdn.myanimelist.net/images/anime/1259/133638.jpg",r:"Late 2026",d:"Football survival game."},
+{t:"Jujutsu Kaisen",i:"https://cdn.myanimelist.net/images/anime/1171/109222.jpg",r:"Mid 2026",d:"Sorcerer vs curses."},
+{t:"Demon Slayer",i:"https://cdn.myanimelist.net/images/anime/1286/99889.jpg",r:"Late 2026",d:"Final arc battle."},
+{t:"Chainsaw Man",i:"https://cdn.myanimelist.net/images/anime/1806/126216.jpg",r:"Late 2026",d:"Devil hunter story."},
+{t:"Death Note",i:"https://cdn.myanimelist.net/images/anime/9/9453.jpg",r:"Completed",d:"Notebook kills people."},
+{t:"Naruto",i:"https://cdn.myanimelist.net/images/anime/13/17405.jpg",r:"Completed",d:"Ninja dream story."},
+{t:"One Piece",i:"https://cdn.myanimelist.net/images/anime/6/73245.jpg",r:"Ongoing",d:"Pirate adventure."},
+{t:"Bleach",i:"https://cdn.myanimelist.net/images/anime/3/40451.jpg",r:"Late 2026",d:"Soul reapers war."},
+{t:"Attack on Titan",i:"https://cdn.myanimelist.net/images/anime/10/47347.jpg",r:"Completed",d:"Human vs Titans."},
+{t:"Spy x Family",i:"https://cdn.myanimelist.net/images/anime/1441/122795.jpg",r:"Late 2026",d:"Spy family comedy."},
+{t:"Tokyo Revengers",i:"https://cdn.myanimelist.net/images/anime/1839/117646.jpg",r:"Late 2026",d:"Time travel gangs."},
+{t:"Hell's Paradise",i:"https://cdn.myanimelist.net/images/anime/1764/136933.jpg",r:"Mid 2026",d:"Dark survival island."},
+{t:"Haikyuu",i:"https://cdn.myanimelist.net/images/anime/7/76014.jpg",r:"Early 2026",d:"Volleyball anime."},
+{t:"Baki",i:"https://cdn.myanimelist.net/images/anime/1935/118737.jpg",r:"Ongoing",d:"Fighting martial arts."},
+{t:"My Hero Academia",i:"https://cdn.myanimelist.net/images/anime/10/78745.jpg",r:"Late 2025",d:"Hero school war."},
+{t:"Re:Zero",i:"https://cdn.myanimelist.net/images/anime/1522/128039.jpg",r:"Mid 2026",d:"Time loop story."},
+{t:"Mushoku Tensei",i:"https://cdn.myanimelist.net/images/anime/1530/117776.jpg",r:"Early 2026",d:"Isekai journey."},
+{t:"Classroom Elite",i:"https://cdn.myanimelist.net/images/anime/5/86848.jpg",r:"Late 2026",d:"Smart school game."},
 
+{t:"Black Clover",i:"https://cdn.myanimelist.net/images/anime/2/88336.jpg",r:"2026 Expected",d:"Magic knights."},
+{t:"Vinland Saga",i:"https://cdn.myanimelist.net/images/anime/1500/103005.jpg",r:"Completed",d:"Viking revenge."},
+{t:"Dr Stone",i:"https://cdn.myanimelist.net/images/anime/1613/102576.jpg",r:"2026 Expected",d:"Science rebuild world."},
+{t:"Fairy Tail",i:"https://cdn.myanimelist.net/images/anime/5/18179.jpg",r:"Completed",d:"Magic guild story."},
+{t:"Mob Psycho 100",i:"https://cdn.myanimelist.net/images/anime/8/80356.jpg",r:"Completed",d:"Psychic powers."},
+{t:"Overlord",i:"https://cdn.myanimelist.net/images/anime/7/88019.jpg",r:"Late 2026",d:"Game world overlord."},
+{t:"Erased",i:"https://cdn.myanimelist.net/images/anime/10/77957.jpg",r:"Completed",d:"Time travel mystery."},
+{t:"Parasyte",i:"https://cdn.myanimelist.net/images/anime/3/73178.jpg",r:"Completed",d:"Alien parasite story."},
+{t:"Tokyo Ghoul",i:"https://cdn.myanimelist.net/images/anime/5/64449.jpg",r:"Completed",d:"Ghoul survival."},
+{t:"Akame ga Kill",i:"https://cdn.myanimelist.net/images/anime/5/64411.jpg",r:"Completed",d:"Assassin group."},
+{t:"Dororo",i:"https://cdn.myanimelist.net/images/anime/1649/101692.jpg",r:"Completed",d:"Samurai demon story."},
+{t:"God of High School",i:"https://cdn.myanimelist.net/images/anime/1722/107269.jpg",r:"Completed",d:"Fighting tournament."},
+{t:"Tower of God",i:"https://cdn.myanimelist.net/images/anime/1702/106741.jpg",r:"2026 Expected",d:"Tower climbing game."}
+
+];
+
+const grid=document.getElementById("grid");
+
+anime.forEach((a,i)=>{
+grid.innerHTML+=`
+<div class="card" onclick="openModal(${i})">
+<img src="${a.i}">
 <div class="card-content">
-<h3>Solo Leveling</h3>
-<p>
-Latest season updates, episode news, and powerful battles of Sung Jinwoo.
-</p>
+<h3>${a.t}</h3>
+<p class="release">Release: ${a.r}</p>
 </div>
-
 </div>
+`;
+});
 
-<div class="card">
+function openModal(i){
+document.getElementById("modal").style.display="block";
+document.getElementById("title").innerText=anime[i].t;
+document.getElementById("img").src=anime[i].i;
+document.getElementById("desc").innerText=anime[i].d;
+}
 
-<div class="tag">TRENDING</div>
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
 
-<img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Kaiju_No._8_key_visual.png">
+function searchAnime(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
 
-<div class="card-content">
-<h3>Kaiju No. 8</h3>
-<p>
-Everything about Kaiju No. 8 upcoming episodes and anime updates.
-</p>
-</div>
+for(let i=0;i<cards.length;i++){
+let title=cards[i].getElementsByTagName("h3")[0];
+cards[i].style.display=
+title.innerText.toLowerCase().includes(input)?"block":"none";
+}
+}
 
-</div>
-
-<div class="card">
-
-<div class="tag">NEW</div>
-
-<img src="https://upload.wikimedia.org/wikipedia/en/7/72/Wind_Breaker_volume_1_cover.jpg">
-
-<div class="card-content">
-<h3>Wind Breaker</h3>
-<p>
-Check release dates, top fights, and latest anime community news.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<footer>
-<!-- LATEST NEWS SECTION -->
-
-<h2 class="section-title">Latest <span>News</span></h2>
-
-<div class="anime-grid">
-
-<div class="card">
-
-<div class="tag">NEW</div>
-
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Solo_Leveling_Webtoon.png/250px-Solo_Leveling_Webtoon.png">
-
-<div class="card-content">
-<h3>Solo Leveling Season 3</h3>
-<p>
-New rumors suggest Season 3 may arrive in 2026 with bigger battles and stronger enemies.
-</p>
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="tag">UPDATE</div>
-
-<img src="https://upload.wikimedia.org/wikipedia/en/0/0f/Kaiju_No._8_key_visual.png">
-
-<div class="card-content">
-<h3>Kaiju No. 8 New Episode</h3>
-<p>
-Fans are excited as the latest episode reveals powerful kaiju transformations.
-</p>
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="tag">HOT</div>
-
-<img src="https://upload.wikimedia.org/wikipedia/en/7/72/Wind_Breaker_volume_1_cover.jpg">
-
-<div class="card-content">
-<h3>Wind Breaker Trending</h3>
-<p>
-Wind Breaker is currently one of the most watched action anime this month.
-</p>
-</div>
-
-</div>
-
-</div>
-
-© 2026 AnimePulse — All Rights Reserved
-
-</footer>
+</script>
 
 </body>
 </html>
